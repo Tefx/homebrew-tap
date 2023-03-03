@@ -3,8 +3,8 @@ class CliChat < Formula
 
   desc "Have a conversation with ChatGPT from your terminal"
   homepage "https://github.com/Tefx/cli-chat"
-  url "https://github.com/Tefx/cli-chat/releases/download/v0.2.0/cli_chat-0.2.0.tar.gz"
-  sha256 "de140af68169e0b804c9bf599a9c0e96648ad826f4e7d523a8fb72159bb5117f"
+  url "https://files.pythonhosted.org/packages/6a/0a/5d3e25e8a67429b9833858966a957d484f0ea2114fd8ba69bf9ce3d9b9d5/cli_chat-0.2.1.tar.gz"
+  sha256 "a6a3016dacee530f586e029a187462364ab718483bb9e7321b8516890bd0288a"
   license "GPL-3.0-or-later"
 
   depends_on "python@3.11"
@@ -17,6 +17,11 @@ class CliChat < Formula
   resource "aiosignal" do
     url "https://files.pythonhosted.org/packages/ae/67/0952ed97a9793b4958e5736f6d2b346b414a2cd63e82d05940032f45b32f/aiosignal-1.3.1.tar.gz"
     sha256 "54cd96e15e1649b75d6c87526a6ff0b6c1b0dd3459f43d9ca11d48c339b68cfc"
+  end
+
+  resource "appdirs" do
+    url "https://files.pythonhosted.org/packages/d7/d8/05696357e0311f5b5c316d7b95f46c669dd9c15aaeecbb48c7d0aeb88c40/appdirs-1.4.4.tar.gz"
+    sha256 "7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"
   end
 
   resource "async-timeout" do
@@ -39,9 +44,9 @@ class CliChat < Formula
     sha256 "ebea339af930f8ca5d7a699b921106c6e29c617fe9606fa7baa043c1cdae326f"
   end
 
-  resource "cli-chat" do
-    url "https://files.pythonhosted.org/packages/50/75/9fd4e2b09595b9ed41028d4b5f330d420eaf3097f063fcfbac840ca918f0/cli_chat-0.2.0.tar.gz"
-    sha256 "6da4376650f6eb8d04a71a18b3e8927b86812754ed99c433807c098dc3160561"
+  resource "click" do
+    url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
+    sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
   end
 
   resource "frozenlist" do
@@ -99,6 +104,11 @@ class CliChat < Formula
     sha256 "5f4f682a004951c1b450bc753c710e9280c5746ce6ffedee253ddbcbf54cf1e4"
   end
 
+  resource "typer" do
+    url "https://files.pythonhosted.org/packages/e1/45/bcbc581f87c8d8f2a56b513eb994d07ea4546322818d95dc6a3caf2c928b/typer-0.7.0.tar.gz"
+    sha256 "ff797846578a9f2a201b53442aedeb543319466870fbe1c701eab66dd7681165"
+  end
+
   resource "urllib3" do
     url "https://files.pythonhosted.org/packages/c5/52/fe421fb7364aa738b3506a2d99e4f3a56e079c0a798e9f4fa5e14c60922f/urllib3-1.26.14.tar.gz"
     sha256 "076907bf8fd355cde77728471316625a4d2f7e713c125f51953bb5b3eecf4f72"
@@ -118,10 +128,10 @@ class CliChat < Formula
     ENV["PYTHONPATH"] = libexec/"lib/python3.11/site-packages"
 
     virtualenv_install_with_resources
-    bin.install libexec/"bin/cli-chat"
   end
 
   test do
-    system "true"
+    assert_match "Usage: cli-chat", shell_output("#{bin}/cli-chat --help")
+    assert_match "Usage: cli-chat-config", shell_output("#{bin}/cli-chat-config --help")
   end
 end
