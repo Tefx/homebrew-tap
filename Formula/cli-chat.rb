@@ -3,8 +3,8 @@ class CliChat < Formula
 
   desc "Have a conversation with ChatGPT from your terminal"
   homepage "https://github.com/Tefx/cli-chat"
-  url "https://files.pythonhosted.org/packages/11/52/0e75086f5b10515aa80a32c32169fa1165cb71c1a72780232cab1c44e3c3/cli_chat-0.2.2.tar.gz"
-  sha256 "e9717d48a13994e4758b93a0a74b8b426da91a3f7709acf0a8b4a3d003b10df6"
+  url "https://files.pythonhosted.org/packages/d8/59/1b2316d65a909dc8a95503679799e4b96c734e35a828ed05bed31c2bef5a/cli_chat-0.2.3.tar.gz"
+  sha256 "504bd934f90f108aa27131f0dd0c2615e39b376be3b1e9f230624a7ce4246b99"
   license "GPL-3.0-or-later"
 
   depends_on "python@3.11"
