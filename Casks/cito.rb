@@ -14,13 +14,6 @@ cask "cito" do
   binary "#{appdir}/Cito.app/Contents/MacOS/Cito", target: "cito"
   binary "#{appdir}/Cito.app/Contents/MacOS/Cito", target: "cito-mcp"
 
-  uninstall_preflight do
-    system_command "#{appdir}/Cito.app/Contents/MacOS/Cito",
-                   args: ["setup", "--uninstall"]
-  rescue StandardError
-    nil
-  end
-
   uninstall quit: "one.tefx.cito"
 
   zap trash: [
