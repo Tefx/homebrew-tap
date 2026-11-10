@@ -1,6 +1,6 @@
 cask "cito" do
   version "0.20.3"
-  sha256 "500160480383486ec1738841133e4fef147f8bc955252a87c5bc68f430f1dd5b"
+  sha256 "ee1c94676031b941e253846b40f10fe9ef8bcb256ccbe474dbbc4fd1d445d272"
 
   url "https://github.com/Tefx/cito/releases/download/v#{version}/Cito-macos-arm64.zip"
   name "Cito"
