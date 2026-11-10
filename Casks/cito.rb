@@ -4,7 +4,7 @@ cask "cito" do
 
   url "https://github.com/Tefx/cito/releases/download/v#{version}/Cito-macos-arm64.zip"
   name "Cito"
-  desc "Cross-harness agent and human signaling network for macOS"
+  desc "Cross-harness agent and human signaling network"
   homepage "https://tefx.github.io/cito/"
 
   depends_on arch: :arm64
@@ -18,7 +18,7 @@ cask "cito" do
 
   zap trash: [
     "~/.cito",
-    "~/Library/LaunchAgents/com.tefx.cito.daemon.plist",
     "~/Applications/Cito.app",
+    "~/Library/LaunchAgents/com.tefx.cito.daemon.plist",
   ]
 end
