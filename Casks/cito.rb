@@ -1,7 +1,7 @@
 # Release template. Generate the installable Cask with packaging/release.py.
 cask "cito" do
-  version "0.22.0"
-  sha256 "3e8ba34e6d59d56a8b13568606443507aac259f2aa2f223ea7895a3fa506083d"
+  version "0.22.1"
+  sha256 "4c1ced4ee6c7a60fd33b2f240ade2eb808fe35d82d75f700f35b4d7233b23ed8"
 
   url "https://github.com/Tefx/cito/releases/download/v#{version}/Cito-macos-arm64.zip"
   name "Cito"
