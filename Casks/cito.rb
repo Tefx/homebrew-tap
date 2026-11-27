@@ -1,7 +1,7 @@
 # Release template. Generate the installable Cask with packaging/release.py.
 cask "cito" do
-  version "0.22.3"
-  sha256 "1fd5884ac38d18cdd5d59c0bfa1aa38ca866cf90ddb3955eb4a861fd8e673fcd"
+  version "0.23.0"
+  sha256 "52f62361e1e275898948a0938af57ca90d598cdb163c64c2c1dbac2fbfd0be43"
 
   url "https://github.com/Tefx/cito/releases/download/v#{version}/Cito-macos-arm64.zip"
   name "Cito"
@@ -15,11 +15,9 @@ cask "cito" do
   binary "#{appdir}/Cito.app/Contents/MacOS/Cito", target: "cito"
   binary "#{appdir}/Cito.app/Contents/MacOS/Cito", target: "cito-mcp"
 
-  uninstall quit: "one.tefx.cito"
+  uninstall launchctl: "com.tefx.cito.daemon",
+            quit:      ["one.tefx.cito", "one.tefx.cito.ui"],
+            delete:    "~/Library/LaunchAgents/com.tefx.cito.daemon.plist"
 
-  zap trash: [
-    "~/.cito",
-    "~/Applications/Cito.app",
-    "~/Library/LaunchAgents/com.tefx.cito.daemon.plist",
-  ]
+  zap trash: "~/.cito"
 end
